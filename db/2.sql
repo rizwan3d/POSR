@@ -7,6 +7,11 @@ INSERT [dbo].[AccountsNature] ( [NatureName]) VALUES ( N'INCOME ')
 INSERT [dbo].[AccountsNature] ( [NatureName]) VALUES ( N'EXPENSE')
 INSERT [dbo].[AccountsNature] ( [NatureName]) VALUES ( N'ASSET')
 
+INSERT [dbo].[AccountCategory] ( [AccountCategoryName],[Active]) VALUES ( N'NULL',1)
+INSERT [dbo].[Area] ( [AreaName],[Active]) VALUES ( N'NULL',1)
+INSERT [dbo].[Category] ( [CategoryName],[Active]) VALUES ( N'NULL',1)
+INSERT [dbo].[ProductGroup] ( [GroupName],[Active]) VALUES ( N'NULL',1)
+
 INSERT INTO [dbo].[ComapanyProfile]
            ([Name]
            ,[Bussiness]
