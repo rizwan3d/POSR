@@ -9,6 +9,7 @@ CREATE TABLE [dbo].[SubStock](
 	[SalePrice] [money] NULL,
 	[PurchasePrice] [money] NULL,
 	[ExpireDate] [date] NULL,
+	[another] [nchar](100) NULL,
  CONSTRAINT [PK_SubStock] PRIMARY KEY CLUSTERED 
 (
 	[SubStockid] ASC
