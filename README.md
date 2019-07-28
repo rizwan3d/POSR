@@ -1,6 +1,10 @@
 #UPDATES
 
+### 28-7-2019
+Add Collem 'bnarcode' in product table with nchar 255
+
 ### Views 
+
 
 ###Replace ProductViewForSales (if error occured on product add button in sale invoice) with following.
 ```sql
