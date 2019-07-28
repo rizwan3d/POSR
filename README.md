@@ -1,7 +1,7 @@
 #UPDATES
 
 ### 28-7-2019
-Add Collem 'bnarcode' in product table with nchar 255
+Add Collem 'barcode' in product table with nchar 255
 
 ### Views 
 
