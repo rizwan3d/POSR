@@ -15,9 +15,11 @@ WHERE        (dbo.Products.Active = 1)
 ```
 
 ### Remove Database
+Press Win+R type following and press enter.
 ```shell
    sqlcmd -S .
 ```
+use following sql query to delete database.
 ```sql
 drop database DDPOSDB
 go
