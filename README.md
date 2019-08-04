@@ -14,6 +14,15 @@ FROM            dbo.Products INNER JOIN
 WHERE        (dbo.Products.Active = 1)
 ```
 
+### Remove Database
+```shell
+   sqlcmd -S .
+```
+```sql
+drop database DDPOSDB
+go
+```
+
 ### Database Managment Tool
 (Downloding Link)[https://fishcodelib.com/Database.htm]
 
