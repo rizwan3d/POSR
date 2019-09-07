@@ -8,7 +8,6 @@ namespace IMS.Scripts
     {
         public void StartUpdate()
         {
-            Console.WriteLine("sdgfhkjl;jafsdf");
         }
     }
 }
