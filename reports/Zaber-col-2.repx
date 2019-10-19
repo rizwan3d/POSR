@@ -64,23 +64,26 @@
 namespace XtraReportSerialization {
     
     public class productLabelsReport1 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
+        private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.XtraReports.UI.XRPanel xrPanel1;
         private DevExpress.XtraReports.UI.XRLabel label3;
         private DevExpress.XtraReports.UI.XRLabel label1;
         private DevExpress.XtraReports.UI.XRBarCode barCode1;
         private DevExpress.XtraReports.UI.XRLabel label2;
-        private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.XRPanel panel1;
         private DevExpress.XtraReports.UI.XRLabel label4;
         private DevExpress.XtraReports.UI.XRLabel label5;
         private DevExpress.XtraReports.UI.XRLabel label6;
         private DevExpress.XtraReports.UI.XRBarCode barCode2;
-        private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.XtraReports.Parameters.Parameter name;
         private DevExpress.XtraReports.Parameters.Parameter shope;
         private DevExpress.XtraReports.Parameters.Parameter price;
         private DevExpress.XtraReports.Parameters.Parameter id;
+        private DevExpress.XtraReports.Parameters.Parameter id2;
+        private DevExpress.XtraReports.Parameters.Parameter name2;
+        private DevExpress.XtraReports.Parameters.Parameter price2;
         private System.Resources.ResourceManager _resources;
         private string _resourceString;
         public productLabelsReport1() {
@@ -98,24 +101,45 @@ namespace XtraReportSerialization {
         private void InitializeComponent() {
             DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator2 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
-            this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
             this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.barCode1 = new DevExpress.XtraReports.UI.XRBarCode();
-            this.panel1 = new DevExpress.XtraReports.UI.XRPanel();
-            this.name = new DevExpress.XtraReports.Parameters.Parameter();
-            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.shope = new DevExpress.XtraReports.Parameters.Parameter();
-            this.label2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.price = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.label3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.id = new DevExpress.XtraReports.Parameters.Parameter();
+            this.label1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.barCode1 = new DevExpress.XtraReports.UI.XRBarCode();
+            this.label2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.panel1 = new DevExpress.XtraReports.UI.XRPanel();
             this.label4 = new DevExpress.XtraReports.UI.XRLabel();
             this.label5 = new DevExpress.XtraReports.UI.XRLabel();
             this.label6 = new DevExpress.XtraReports.UI.XRLabel();
             this.barCode2 = new DevExpress.XtraReports.UI.XRBarCode();
+            this.name = new DevExpress.XtraReports.Parameters.Parameter();
+            this.shope = new DevExpress.XtraReports.Parameters.Parameter();
+            this.price = new DevExpress.XtraReports.Parameters.Parameter();
+            this.id = new DevExpress.XtraReports.Parameters.Parameter();
+            this.id2 = new DevExpress.XtraReports.Parameters.Parameter();
+            this.name2 = new DevExpress.XtraReports.Parameters.Parameter();
+            this.price2 = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // topMarginBand1
+            // 
+            this.topMarginBand1.BorderWidth = 0F;
+            this.topMarginBand1.Dpi = 254F;
+            this.topMarginBand1.HeightF = 13.30729F;
+            this.topMarginBand1.Name = "topMarginBand1";
+            this.topMarginBand1.SnapLinePadding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.topMarginBand1.StylePriority.UseBorderWidth = false;
+            // 
+            // bottomMarginBand1
+            // 
+            this.bottomMarginBand1.BorderWidth = 0F;
+            this.bottomMarginBand1.Dpi = 254F;
+            this.bottomMarginBand1.HeightF = 3.406001F;
+            this.bottomMarginBand1.Name = "bottomMarginBand1";
+            this.bottomMarginBand1.SnapLinePadding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.bottomMarginBand1.StylePriority.UseBorderWidth = false;
             // 
             // xrPanel1
             // 
@@ -137,15 +161,6 @@ namespace XtraReportSerialization {
             this.xrPanel1.SizeF = new System.Drawing.SizeF(475.3516F, 225F);
             this.xrPanel1.StylePriority.UseBorderWidth = false;
             // 
-            // topMarginBand1
-            // 
-            this.topMarginBand1.BorderWidth = 0F;
-            this.topMarginBand1.Dpi = 254F;
-            this.topMarginBand1.HeightF = 13.30729F;
-            this.topMarginBand1.Name = "topMarginBand1";
-            this.topMarginBand1.SnapLinePadding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.topMarginBand1.StylePriority.UseBorderWidth = false;
-            // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -159,17 +174,44 @@ namespace XtraReportSerialization {
             this.Detail.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // bottomMarginBand1
+            // label3
             // 
-            this.bottomMarginBand1.BorderWidth = 0F;
-            this.bottomMarginBand1.Dpi = 254F;
-            this.bottomMarginBand1.HeightF = 3.406001F;
-            this.bottomMarginBand1.Name = "bottomMarginBand1";
-            this.bottomMarginBand1.SnapLinePadding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.bottomMarginBand1.StylePriority.UseBorderWidth = false;
+            this.label3.BorderWidth = 0F;
+            this.label3.Dpi = 254F;
+            this.label3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[price]")});
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(278.9999F, 167.8195F);
+            this.label3.Multiline = true;
+            this.label3.Name = "label3";
+            this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label3.SizeF = new System.Drawing.SizeF(171.3517F, 45.3002F);
+            this.label3.StylePriority.UseBorderWidth = false;
+            this.label3.StylePriority.UseFont = false;
+            this.label3.StylePriority.UseTextAlignment = false;
+            this.label3.Text = "label1";
+            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.label3.TextFormatString = "Rs.{0}";
+            // 
+            // label1
+            // 
+            this.label1.BorderWidth = 0F;
+            this.label1.Dpi = 254F;
+            this.label1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[shope]")});
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(14.4167F, 167.8195F);
+            this.label1.Multiline = true;
+            this.label1.Name = "label1";
+            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label1.SizeF = new System.Drawing.SizeF(254F, 45.30023F);
+            this.label1.StylePriority.UseBorderWidth = false;
+            this.label1.StylePriority.UseFont = false;
+            this.label1.Text = "label1";
             // 
             // barCode1
             // 
+            this.barCode1.Alignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.barCode1.BorderWidth = 0F;
             this.barCode1.Dpi = 254F;
             this.barCode1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
@@ -187,6 +229,22 @@ namespace XtraReportSerialization {
             this.barCode1.Symbology = code128Generator1;
             this.barCode1.Text = "999999";
             this.barCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BorderWidth = 0F;
+            this.label2.Dpi = 254F;
+            this.label2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[name]")});
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(14.41667F, 14.20498F);
+            this.label2.Multiline = true;
+            this.label2.Name = "label2";
+            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.label2.SizeF = new System.Drawing.SizeF(435.9349F, 38.13529F);
+            this.label2.StylePriority.UseBorderWidth = false;
+            this.label2.StylePriority.UseFont = false;
+            this.label2.Text = "label1";
             // 
             // panel1
             // 
@@ -208,94 +266,18 @@ namespace XtraReportSerialization {
             this.panel1.SizeF = new System.Drawing.SizeF(490.2344F, 225F);
             this.panel1.StylePriority.UseBorderWidth = false;
             // 
-            // name
-            // 
-            this.name.Description = "product name";
-            this.name.Name = "name";
-            this.name.ValueInfo = "Product Name";
-            // 
-            // label1
-            // 
-            this.label1.BorderWidth = 0F;
-            this.label1.Dpi = 254F;
-            this.label1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[shope]")});
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(14.4167F, 167.8195F);
-            this.label1.Multiline = true;
-            this.label1.Name = "label1";
-            this.label1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.label1.SizeF = new System.Drawing.SizeF(254F, 45.30023F);
-            this.label1.StylePriority.UseBorderWidth = false;
-            this.label1.StylePriority.UseFont = false;
-            this.label1.Text = "label1";
-            // 
-            // shope
-            // 
-            this.shope.Description = "shope Name";
-            this.shope.Name = "shope";
-            this.shope.ValueInfo = "Shope Name";
-            // 
-            // label2
-            // 
-            this.label2.BorderWidth = 0F;
-            this.label2.Dpi = 254F;
-            this.label2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[name]")});
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.LocationFloat = new DevExpress.Utils.PointFloat(14.41667F, 14.20496F);
-            this.label2.Multiline = true;
-            this.label2.Name = "label2";
-            this.label2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.label2.SizeF = new System.Drawing.SizeF(254F, 38.13529F);
-            this.label2.StylePriority.UseBorderWidth = false;
-            this.label2.StylePriority.UseFont = false;
-            this.label2.Text = "label1";
-            // 
-            // price
-            // 
-            this.price.Description = "price of one unit";
-            this.price.Name = "price";
-            this.price.Type = typeof(decimal);
-            this.price.ValueInfo = "1000";
-            // 
-            // label3
-            // 
-            this.label3.BorderWidth = 0F;
-            this.label3.Dpi = 254F;
-            this.label3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[price]")});
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.LocationFloat = new DevExpress.Utils.PointFloat(278.9999F, 167.8195F);
-            this.label3.Multiline = true;
-            this.label3.Name = "label3";
-            this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.label3.SizeF = new System.Drawing.SizeF(171.3517F, 45.3002F);
-            this.label3.StylePriority.UseBorderWidth = false;
-            this.label3.StylePriority.UseFont = false;
-            this.label3.StylePriority.UseTextAlignment = false;
-            this.label3.Text = "label1";
-            this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.label3.TextFormatString = "Rs.{0}";
-            // 
-            // id
-            // 
-            this.id.Description = "productid";
-            this.id.Name = "id";
-            this.id.ValueInfo = "1";
-            // 
             // label4
             // 
             this.label4.BorderWidth = 0F;
             this.label4.Dpi = 254F;
             this.label4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[name]")});
+                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[name2]")});
             this.label4.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.LocationFloat = new DevExpress.Utils.PointFloat(24.99994F, 14.20496F);
+            this.label4.LocationFloat = new DevExpress.Utils.PointFloat(24.99994F, 14.20498F);
             this.label4.Multiline = true;
             this.label4.Name = "label4";
             this.label4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.label4.SizeF = new System.Drawing.SizeF(254F, 38.13529F);
+            this.label4.SizeF = new System.Drawing.SizeF(435.935F, 38.13529F);
             this.label4.StylePriority.UseBorderWidth = false;
             this.label4.StylePriority.UseFont = false;
             this.label4.Text = "label1";
@@ -321,7 +303,7 @@ namespace XtraReportSerialization {
             this.label6.BorderWidth = 0F;
             this.label6.Dpi = 254F;
             this.label6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[price]")});
+                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[price2]")});
             this.label6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.LocationFloat = new DevExpress.Utils.PointFloat(289.5833F, 167.8195F);
             this.label6.Multiline = true;
@@ -337,10 +319,11 @@ namespace XtraReportSerialization {
             // 
             // barCode2
             // 
+            this.barCode2.Alignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.barCode2.BorderWidth = 0F;
             this.barCode2.Dpi = 254F;
             this.barCode2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[id]")});
+                        new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[id2]")});
             this.barCode2.Font = new System.Drawing.Font("Times New Roman", 9F);
             this.barCode2.LocationFloat = new DevExpress.Utils.PointFloat(25.00006F, 52.34025F);
             this.barCode2.Module = 4F;
@@ -352,8 +335,51 @@ namespace XtraReportSerialization {
             this.barCode2.StylePriority.UsePadding = false;
             this.barCode2.StylePriority.UseTextAlignment = false;
             this.barCode2.Symbology = code128Generator2;
-            this.barCode2.Text = "00000000000000000";
+            this.barCode2.Text = "999999";
             this.barCode2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // name
+            // 
+            this.name.Description = "product name";
+            this.name.Name = "name";
+            this.name.ValueInfo = "Product Name";
+            // 
+            // shope
+            // 
+            this.shope.Description = "shope Name";
+            this.shope.Name = "shope";
+            this.shope.ValueInfo = "Shope Name";
+            // 
+            // price
+            // 
+            this.price.Description = "price of one unit";
+            this.price.Name = "price";
+            this.price.Type = typeof(decimal);
+            this.price.ValueInfo = "1000";
+            // 
+            // id
+            // 
+            this.id.Description = "productid";
+            this.id.Name = "id";
+            this.id.ValueInfo = "1";
+            // 
+            // id2
+            // 
+            this.id2.Description = "Parameter1";
+            this.id2.Name = "id2";
+            this.id2.ValueInfo = "0";
+            // 
+            // name2
+            // 
+            this.name2.Description = "Parameter1";
+            this.name2.Name = "name2";
+            // 
+            // price2
+            // 
+            this.price2.Description = "Parameter1";
+            this.price2.Name = "price2";
+            this.price2.Type = typeof(decimal);
+            this.price2.ValueInfo = "0";
             // 
             // productLabelsReport1
             // 
@@ -373,7 +399,10 @@ namespace XtraReportSerialization {
                         this.name,
                         this.shope,
                         this.price,
-                        this.id});
+                        this.id,
+                        this.id2,
+                        this.name2,
+                        this.price2});
             this.PrinterName = "ZDesigner TLP 2844-Z";
             this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
             this.SnapGridSize = 31.75F;
