@@ -87,3 +87,12 @@ GO
 
 ALTER TABLE [dbo].[Salesman] ADD  CONSTRAINT [DF_Salesman_Active]  DEFAULT ((1)) FOR [Active]
 GO
+
+GO
+IF COL_LENGTH('SaleInvoice', 'SaleMen') IS NULL
+BEGIN
+    ALTER TABLE SaleInvoice
+    ADD [SaleMen] [int]
+END
+
+GO
