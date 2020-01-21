@@ -22,6 +22,15 @@ END
 
 GO
 
+IF COL_LENGTH('Products', 'txtextraurdu') IS NULL
+BEGIN
+    ALTER TABLE PurchaseInvoiceItems
+    ADD [Packing] [nchar](255)
+END
+
+
+GO
+
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='wpacking' and xtype='U')
     CREATE TABLE [dbo].[wpacking](
 	[wpackingid] [int] IDENTITY(1,1) NOT NULL,
