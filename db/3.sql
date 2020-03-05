@@ -206,3 +206,14 @@ BEGIN
 END
 
 GO
+
+IF COL_LENGTH('Ledger', 'created_at') IS NULL
+BEGIN
+    ALTER TABLE Ledger
+    ADD [created_at] [datetime];
+END
+
+Go
+
+ALTER TABLE [dbo].[Ledger] ADD  CONSTRAINT [DF_Ledger_created_at]  DEFAULT (getdate()) FOR [created_at]
+GO
