@@ -217,3 +217,6 @@ Go
 
 ALTER TABLE [dbo].[Ledger] ADD  CONSTRAINT [DF_Ledger_created_at]  DEFAULT (getdate()) FOR [created_at]
 GO
+
+ALTER TABLE SaleInvoice  ALTER COLUMN Customer NVARCHAR(255) NOT NULL; 
+GO
