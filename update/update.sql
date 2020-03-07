@@ -1,3 +1,6 @@
+USE [DDPOSDB]
+GO
+
 IF COL_LENGTH('Products', 'txtextraurdu') IS NULL
 BEGIN
     ALTER TABLE Products
