@@ -220,3 +220,11 @@ GO
 
 ALTER TABLE SaleInvoice  ALTER COLUMN Customer NVARCHAR(255) NOT NULL; 
 GO
+
+IF COL_LENGTH('PurchasesInvoice', 'Dis') IS NULL
+BEGIN
+    ALTER TABLE PurchasesInvoice
+    ADD [Dis] [nchar](255) NULL
+END
+
+Go

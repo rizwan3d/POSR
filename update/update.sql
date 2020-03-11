@@ -130,3 +130,11 @@ Go
 
 ALTER TABLE [dbo].[Ledger] ADD  CONSTRAINT [DF_Ledger_created_at]  DEFAULT (getdate()) FOR [created_at]
 GO
+
+IF COL_LENGTH('PurchasesInvoice', 'Dis') IS NULL
+BEGIN
+    ALTER TABLE PurchasesInvoice
+    ADD [Dis] [nchar](255) NULL
+END
+
+Go
