@@ -228,3 +228,7 @@ BEGIN
 END
 
 Go
+
+
+INSERT [dbo].[ResTableInfo] ( [TableName],[Active]) VALUES ( N'NULL',1)
+Go

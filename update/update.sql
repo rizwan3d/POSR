@@ -114,7 +114,7 @@ GO
 IF COL_LENGTH('Ledger', 'created_at') IS NULL
 BEGIN
     ALTER TABLE Ledger
-    ADD [created_at] [datetime];
+    ADD [created_at] [datetime]
 END
 
 Go
@@ -126,6 +126,18 @@ IF COL_LENGTH('PurchasesInvoice', 'Dis') IS NULL
 BEGIN
     ALTER TABLE PurchasesInvoice
     ADD [Dis] [nchar](255) NULL
+END
+
+Go
+
+ALTER TABLE SaleInvoice ALTER COLUMN Customer VARCHAR (100);
+
+Go
+
+IF COL_LENGTH('SaleInvoice', 'OrderType') IS NULL
+BEGIN
+    ALTER TABLE SaleInvoice
+    ADD [OrderType] [nchar](50) NULL
 END
 
 Go
