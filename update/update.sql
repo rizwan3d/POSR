@@ -232,3 +232,73 @@ Go
 
 INSERT [dbo].[ResTableInfo] ( [TableName],[Active]) VALUES ( N'NULL',1)
 Go
+
+IF COL_LENGTH('Accounts', 'LicenceNumber') IS NULL
+BEGIN
+    ALTER TABLE Accounts
+    ADD [LicenceNumber] nchar(255) NULL;
+END
+
+Go
+
+IF COL_LENGTH('Accounts', 'LicenceExpiryDate') IS NULL
+BEGIN
+    ALTER TABLE Accounts
+    ADD [LicenceExpiryDate] [datetime] NULL;
+END
+
+Go
+
+
+ALTER VIEW AccountViewWithCurrentBlance AS
+SELECT        dbo.Accounts.AccountId, dbo.Accounts.AccountName, dbo.AccountGroup.AccountGroupName, dbo.AccountsNature.NatureName, dbo.Accounts.Refferences, dbo.Area.AreaName, dbo.Accounts.JoiningDate, dbo.Accounts.Business, 
+                         dbo.Accounts.Phone, dbo.Accounts.Phone2, dbo.Accounts.Mobile, dbo.Accounts.Mobile2, dbo.Accounts.Email, dbo.Accounts.Facebook, dbo.Accounts.BankAccountNo, dbo.Accounts.NTNno, dbo.Accounts.Address, 
+                         dbo.Accounts.OpeningCredit, dbo.Accounts.OpeningDebit, dbo.CurrentCredit.Credit, dbo.CurrentDebit.Debit, dbo.AccountCategory.AccountCategoryName, dbo.Accounts.CurrentReading, dbo.Accounts.LicenceNumber , dbo.Accounts.LicenceExpiryDate
+FROM            dbo.Accounts INNER JOIN
+                         dbo.AccountGroup ON dbo.Accounts.AccountGroupID = dbo.AccountGroup.AccountGroupID INNER JOIN
+                         dbo.AccountsNature ON dbo.AccountGroup.NatureID = dbo.AccountsNature.NatureID INNER JOIN
+                         dbo.Area ON dbo.Accounts.AreaID = dbo.Area.AreaID INNER JOIN
+                         dbo.CurrentCredit ON dbo.Accounts.AccountId = dbo.CurrentCredit.AccountId INNER JOIN
+                         dbo.CurrentDebit ON dbo.Accounts.AccountId = dbo.CurrentDebit.AccountId LEFT OUTER JOIN
+                         dbo.AccountCategory ON dbo.Accounts.AccountCategoryID = dbo.AccountCategory.AccountCategoryID
+WHERE        (dbo.Accounts.Acitve = 1)
+
+Go
+
+ALTER PROCEDURE [dbo].[WithCBlance]
+	-- Add the parameters for the stored procedure here
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	
+
+    -- Insert statements for procedure here
+	SELECT [AccountId] as ID
+      ,[AccountName] as Name
+      ,[AccountGroupName] as [Group]
+      ,[NatureName] as Nature
+      ,[Refferences]
+      ,[AreaName] as Area
+      ,[JoiningDate] as [Joinind Date]
+      ,[Business] 
+      ,[Phone]
+      ,[Phone2]
+      ,[Mobile]
+      ,[Mobile2]
+      ,[Email]
+      ,[Facebook]
+      ,[BankAccountNo] as [Bank Account]
+      ,[NTNno] as NTN
+      ,[Address]
+      ,[OpeningCredit]
+      ,[OpeningDebit]
+      ,[Credit]
+      ,[Debit]
+	  ,CurrentReading,[LicenceNumber],[LicenceExpiryDate]
+	  ,IIF(([Debit]-[Credit]) < 0, CAST(-([Debit]-[Credit]) AS VARCHAR)+' CR', CAST(([Debit]-[Credit]) AS VARCHAR)+' DR') as [Current Blance] FROM AccountViewWithCurrentBlance
+END
+
+Go
+
