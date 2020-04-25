@@ -1,6 +1,8 @@
 USE [DDPOSDB]
 GO
 
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='SubStock' and xtype='U')
 CREATE TABLE [dbo].[SubStock](
 	[SubStockid] [int] IDENTITY(1,1) NOT NULL,
 	[GroupName] [nchar](255) NULL,
@@ -18,6 +20,7 @@ CREATE TABLE [dbo].[SubStock](
 
 GO
 
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='wpacking' and xtype='U')
 CREATE TABLE [dbo].[wpacking](
 	[wpackingid] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nchar](255) NOT NULL,
@@ -30,6 +33,7 @@ CREATE TABLE [dbo].[wpacking](
 
 GO
 
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='JournalVoucher' and xtype='U')
 CREATE TABLE [dbo].[JournalVoucher](
 	[JournalVoucherId] [int] IDENTITY(1,1) NOT NULL,
 	[date] [date] NULL,
@@ -41,6 +45,8 @@ CREATE TABLE [dbo].[JournalVoucher](
 ) ON [PRIMARY]
 
 GO
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='JvItems' and xtype='U')
 CREATE TABLE [dbo].[JvItems](
 	[JvItemId] [int] IDENTITY(1,1) NOT NULL,
 	[AccountId] [int] NOT NULL,
@@ -71,6 +77,7 @@ ALTER TABLE [dbo].[JvItems] CHECK CONSTRAINT [FK_JvItems_JournalVoucher]
 
 GO
 
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Salesman' and xtype='U')
 CREATE TABLE [dbo].[Salesman](
 	[SalesmanId] [int] IDENTITY(1,1) NOT NULL,
 	[AccountId] [int] NOT NULL,
@@ -296,8 +303,9 @@ BEGIN
       ,[OpeningDebit]
       ,[Credit]
       ,[Debit]
-	  ,CurrentReading,[LicenceNumber],[LicenceExpiryDate]
+	  ,CurrentReading
 	  ,IIF(([Debit]-[Credit]) < 0, CAST(-([Debit]-[Credit]) AS VARCHAR)+' CR', CAST(([Debit]-[Credit]) AS VARCHAR)+' DR') as [Current Blance] FROM AccountViewWithCurrentBlance
+	  ,[LicenceNumber],[LicenceExpiryDate]
 END
 
 Go
