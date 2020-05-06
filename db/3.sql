@@ -304,8 +304,11 @@ BEGIN
       ,[Credit]
       ,[Debit]
 	  ,CurrentReading
-	  ,IIF(([Debit]-[Credit]) < 0, CAST(-([Debit]-[Credit]) AS VARCHAR)+' CR', CAST(([Debit]-[Credit]) AS VARCHAR)+' DR') as [Current Blance] FROM AccountViewWithCurrentBlance
-	  ,[LicenceNumber],[LicenceExpiryDate]
+	  ,IIF(([Debit]-[Credit]) < 0, CAST(-([Debit]-[Credit]) AS VARCHAR)+' CR', CAST(([Debit]-[Credit]) AS VARCHAR)+' DR') as [Current Blance] 
+	  ,[LicenceNumber]
+	  ,[LicenceExpiryDate]
+	  FROM AccountViewWithCurrentBlance
+	  
 END
 
 Go
