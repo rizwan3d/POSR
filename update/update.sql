@@ -95,7 +95,6 @@ GO
 ALTER TABLE [dbo].[Salesman] ADD  CONSTRAINT [DF_Salesman_Active]  DEFAULT ((1)) FOR [Active]
 GO
 
-GO
 IF COL_LENGTH('SaleInvoice', 'SaleMen') IS NULL
 BEGIN
     ALTER TABLE SaleInvoice
@@ -141,8 +140,6 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='wpacking' and xtype='U')
 
 GO
 
-
-GO
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='[JournalVoucher]' and xtype='U')
 CREATE TABLE [dbo].[JournalVoucher](
 	[JournalVoucherId] [int] IDENTITY(1,1) NOT NULL,
@@ -185,8 +182,6 @@ GO
 ALTER TABLE [dbo].[JvItems] CHECK CONSTRAINT [FK_JvItems_JournalVoucher]
 GO
 
-
-GO
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='[Salesman]' and xtype='U')
 CREATE TABLE [dbo].[Salesman](
 	[SalesmanId] [int] IDENTITY(1,1) NOT NULL,
@@ -205,7 +200,6 @@ GO
 ALTER TABLE [dbo].[Salesman] ADD  CONSTRAINT [DF_Salesman_Active]  DEFAULT ((1)) FOR [Active]
 GO
 
-GO
 IF COL_LENGTH('SaleInvoice', 'SaleMen') IS NULL
 BEGIN
     ALTER TABLE SaleInvoice
