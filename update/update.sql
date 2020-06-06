@@ -314,3 +314,18 @@ BEGIN
 END
 
 GO
+
+
+CREATE TABLE [dbo].[StockAdjustment](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NULL,
+	[PrvStock] [money] NULL,
+	[NewStock] [money] NULL,
+	[Narration] [nchar](255) NULL,
+	[Date] [date] NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[StockAdjustment] ADD  CONSTRAINT [DF_StockAdjustment_Date]  DEFAULT (getdate()) FOR [Date]
+GO
+
