@@ -315,7 +315,7 @@ END
 
 GO
 
-
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='[StockAdjustment]' and xtype='U')
 CREATE TABLE [dbo].[StockAdjustment](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[ProductId] [int] NULL,
@@ -328,4 +328,15 @@ GO
 
 ALTER TABLE [dbo].[StockAdjustment] ADD  CONSTRAINT [DF_StockAdjustment_Date]  DEFAULT (getdate()) FOR [Date]
 GO
+
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='[OpeningStock]' and xtype='U')
+CREATE TABLE [dbo].[OpeningStock](
+	[OpeningStock] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NULL,
+	[Stock] [money] NULL,
+	[Date] [date] NOT NULL
+) ON [PRIMARY]
+GO
+
 
