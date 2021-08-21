@@ -340,3 +340,15 @@ CREATE TABLE [dbo].[OpeningStock](
 GO
 
 
+ALTER VIEW [dbo].[SaleInvoiceHistory]
+AS
+SELECT        dbo.SaleInvoice.SaleInvoiceID, dbo.SaleInvoice.Date, dbo.Accounts.AccountName, dbo.SaleInvoice.Customer, dbo.SaleInvoice.TotalDisc, dbo.SaleInvoice.CREsived, dbo.SaleInvoice.CashRetrurend, 
+                         dbo.SaleInvoice.TotalAmount, dbo.Products.ProductName, dbo.SaleInvoiceItems.Quantity, dbo.SaleInvoiceItems.SPrice, dbo.SaleInvoiceItems.Discount, dbo.SaleInvoiceItems.Total, dbo.ProductGroup.GroupName, 
+                         dbo.SaleInvoiceItems.Packing, Accounts_1.AccountName AS SaleMan
+FROM            dbo.SaleInvoice INNER JOIN
+                         dbo.SaleInvoiceItems ON dbo.SaleInvoice.SaleInvoiceID = dbo.SaleInvoiceItems.SaleInvoiceID INNER JOIN
+                         dbo.Accounts ON dbo.SaleInvoice.AccountId = dbo.Accounts.AccountId INNER JOIN
+                         dbo.Products ON dbo.SaleInvoiceItems.ProductId = dbo.Products.ProductId INNER JOIN
+                         dbo.ProductGroup ON dbo.Products.ProductGroupId = dbo.ProductGroup.ProductGroupId INNER JOIN
+                         dbo.Accounts AS Accounts_1 ON dbo.SaleInvoice.SaleMen = Accounts_1.AccountId
+GO
