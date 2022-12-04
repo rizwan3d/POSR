@@ -309,7 +309,7 @@ Go
 
 IF COL_LENGTH('SaleInvoice', 'OrderType') IS NULL
 BEGIN
-    ALTER TABLE Products
+    ALTER TABLE SaleInvoice
     ADD [OrderType] [nchar](50)
 END
 
